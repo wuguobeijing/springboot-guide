@@ -23,7 +23,7 @@ public class ReadConfigPropertiesApplication implements InitializingBean {
         this.profileProperties = profileProperties;
         this.webSite = webSite;
     }
-
+//    public ReadConfigPropertiesApplication(){}
     public static void main(String[] args) {
         SpringApplication.run(ReadConfigPropertiesApplication.class, args);
     }

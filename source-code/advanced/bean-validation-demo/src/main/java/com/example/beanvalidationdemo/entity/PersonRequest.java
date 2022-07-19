@@ -24,7 +24,7 @@ import javax.validation.constraints.Size;
 public class PersonRequest {
 
     @NotNull(message = "classId 不能为空")
-    private String classId;
+        private String classId;
 
     @Size(max = 33)
     @NotNull(message = "name 不能为空")

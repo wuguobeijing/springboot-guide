@@ -30,7 +30,7 @@ public class AsyncService {
               "Crawl"));
 
   /** 示范使用：找到特定字符/字符串开头的电影 */
-  @Async
+  @Async  // 允许异步进行
   public CompletableFuture<List<String>> completableFutureTask(String start) {
     logger.warn(Thread.currentThread().getName() + "start this task!");
     // 找出所有以 F 开头的电影

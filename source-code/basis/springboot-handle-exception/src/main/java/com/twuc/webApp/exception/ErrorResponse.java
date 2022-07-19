@@ -3,6 +3,7 @@ package com.twuc.webApp.exception;
 /**
  * @author shuang.kou
  */
+
 public class ErrorResponse {
 
     private String message;

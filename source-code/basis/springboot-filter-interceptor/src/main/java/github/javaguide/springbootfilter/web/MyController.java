@@ -10,7 +10,7 @@ public class MyController {
 
     @GetMapping("/hello")
     public String getHello() throws InterruptedException {
-        Thread.sleep(1000);
+//        Thread.sleep(1000);
         return "Hello";
     }
 }

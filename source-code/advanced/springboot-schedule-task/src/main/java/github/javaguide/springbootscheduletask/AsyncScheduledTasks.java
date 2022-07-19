@@ -26,7 +26,7 @@ public class AsyncScheduledTasks {
     /**
      * fixedDelay：固定延迟执行。距离上一次调用成功后2秒才执。
      */
-    @Async
+//    @Async //注释掉则会以5秒的周期来运行
     @Scheduled(fixedDelay = 2000)
     public void reportCurrentTimeWithFixedDelay() {
         log.info("Current Thread : {}", Thread.currentThread().getName());

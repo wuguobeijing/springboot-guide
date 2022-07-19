@@ -2,14 +2,11 @@ package com.example.helloworld.controller;
 
 import com.example.helloworld.dto.UserDto;
 import com.example.helloworld.entity.User;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
 
 @RestController
 @RequestMapping("users")
@@ -21,9 +18,10 @@ public class UserController {
         add(new User(33333L, "帅", "koushuangbwcx@163.com", "123456"));
     }};
 
-    @GetMapping
-    public ResponseEntity<List<UserDto>> getUsers() {
 
-        return null;
+    @GetMapping("identity")
+    public String getUsers() {
+        System.out.println(users);
+        return "UserDto1";
     }
 }

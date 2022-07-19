@@ -25,6 +25,10 @@ import static org.junit.Assert.assertEquals;
 public class PersonRepositoryTest2 {
     @Autowired
     private PersonRepository personRepository;
+    @Autowired
+    private CompanyRepository companyRepository;
+    @Autowired
+    private SchoolRepository schoolRepository;
 
     @Sql(scripts = {"classpath:/init.sql"})
     @Test
@@ -38,6 +42,9 @@ public class PersonRepositoryTest2 {
     public void should_get_user_info() {
         Optional<UserDTO> userInformation = personRepository.getUserInformation(1L);
         System.out.println(userInformation.get().toString());
+        personRepository.deleteAll();
+        schoolRepository.deleteAll();
+        companyRepository.deleteAll();
     }
 
     @Sql(scripts = {"classpath:/init.sql"})
@@ -50,6 +57,9 @@ public class PersonRepositoryTest2 {
         //按照当前分页大小，总页数
         System.out.println(userInformationList.getTotalPages());// 2
         System.out.println(userInformationList.getContent());
+        personRepository.deleteAll();
+        schoolRepository.deleteAll();
+        companyRepository.deleteAll();
     }
 
     @Sql(scripts = {"classpath:/init.sql"})
@@ -58,6 +68,9 @@ public class PersonRepositoryTest2 {
         List<String> personList=new ArrayList<>(Arrays.asList("person1","person2"));
         List<UserDTO> userDTOS = personRepository.filterUserInfo(personList);
         System.out.println(userDTOS);
+        personRepository.deleteAll();
+        schoolRepository.deleteAll();
+        companyRepository.deleteAll();
     }
 
     @Sql(scripts = {"classpath:/init.sql"})
@@ -65,5 +78,8 @@ public class PersonRepositoryTest2 {
     public void should_filter_user_info_by_age() {
         List<UserDTO> userDTOS = personRepository.filterUserInfoByAge(19,20);
         System.out.println(userDTOS);
+        personRepository.deleteAll();
+        schoolRepository.deleteAll();
+        companyRepository.deleteAll();
     }
 }
